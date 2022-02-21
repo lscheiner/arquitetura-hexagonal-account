@@ -13,15 +13,15 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+      
+      - name: Setup
+        working-directory: ./account
 
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '11'
           distribution: 'adopt'
-      
-      - name: cd account 
-        run: cd account
 
       - name: Build with Maven
         run: mvn install
