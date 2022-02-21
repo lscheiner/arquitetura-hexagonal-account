@@ -21,7 +21,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build with Maven
-        run: mvn install
+        run: cd account && mvn install
 
       - name: Login to Heroku Container registry
         env: 
