@@ -1,7 +1,10 @@
 package br.com.lab.impacta.account.domain.exception;
 
 public class AccountWithoutBalanceException extends RuntimeException {
-    private String description;
+
+	private static final long serialVersionUID = -7351146825129595990L;
+
+	private String description;
 
     public String getDescription(){
         return description;
