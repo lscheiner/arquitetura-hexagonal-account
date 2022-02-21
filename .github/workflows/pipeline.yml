@@ -13,9 +13,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      
-      - name: Setup
-        working-directory: ./account
 
       - name: Set up JDK 11
         uses: actions/setup-java@v2
@@ -25,6 +22,7 @@ jobs:
 
       - name: Build with Maven
         run: mvn install
+        working-directory: account
 
       - name: Login to Heroku Container registry
         env: 
@@ -35,6 +33,7 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+        working-directory: account
 
   Deploy:
     needs: Build
