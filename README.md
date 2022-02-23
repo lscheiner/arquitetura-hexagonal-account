@@ -1,3 +1,7 @@
+![Pipeline Projeto](https://github.com/lscheiner/arquitetura-hexagonal-account/blob/main/.github/workflows/pipeline.yml/badge.svg)
+
+
+
 docker build -t java-hex .
 
 
