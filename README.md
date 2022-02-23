@@ -1,4 +1,4 @@
-![Pipeline Projeto](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+![Pipeline Java](https://github.com/lscheiner/arquitetura-hexagonal-account/actions/workflows/pipeline.yml/badge.svg)
 
 
 
