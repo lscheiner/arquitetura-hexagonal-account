@@ -25,6 +25,10 @@ jobs:
         working-directory: account
   
   SonarCloud:
+      name: Clean install
+      run: mvn clean install -Dmaven.test.skip
+      working-directory: account
+
       name: SonarCloud
       runs-on: ubuntu-latest
       steps:
@@ -52,7 +56,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build with Maven
-        run: mvn install
+        run: mvn install -Dmaven.test.skip
         working-directory: account
 
       - name: Login to Heroku Container registry
