@@ -35,6 +35,9 @@ jobs:
         - name: Clean install
           run: mvn clean install -Dmaven.test.skip
           working-directory: account
+
+        - name: Command LS
+          run: ls -lhart account/target/classes
         
         - name: SonarCloud Scan
           uses: SonarSource/sonarcloud-github-action@master
