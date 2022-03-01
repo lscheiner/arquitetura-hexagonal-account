@@ -36,11 +36,9 @@ jobs:
           run: mvn clean install -Dmaven.test.skip
           working-directory: account
 
-        - name: Command LS
-          run: ls -lhart account/target/classes
-        
         - name: SonarCloud Scan
           uses: SonarSource/sonarcloud-github-action@master
+          working-directory: account
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
