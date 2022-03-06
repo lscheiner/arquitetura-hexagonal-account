@@ -1,14 +1,13 @@
 package br.com.lab.impacta.account.domain.exception;
 
+import lombok.Getter;
+
+@Getter
 public class AccountWithoutBalanceException extends RuntimeException {
 
 	private static final long serialVersionUID = -7351146825129595990L;
 
 	private String description;
-
-    public String getDescription(){
-        return description;
-    }
 
     public AccountWithoutBalanceException() { super(); }
 

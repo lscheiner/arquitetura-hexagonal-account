@@ -7,27 +7,28 @@ import javax.persistence.*;
 @Data
 @Entity
 public class Account {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private Long number;
+	private Long number;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "person_id")
-    private Person customer;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "person_id")
+	private Person customer;
 
-    private Double balance;
+	private Double balance;
 
-    public boolean debit(Double valueOfDebit) {
-        if (this.getBalance() < valueOfDebit) {
-            return false;
-        }
+	public boolean debit(Double valueOfDebit) {
+		
+		if (this.getBalance() < valueOfDebit) {
+			return false;
+		}
 
-        Double debitedAmount = this.getBalance() - valueOfDebit;
+		Double debitedAmount = this.getBalance() - valueOfDebit;
 
-        this.setBalance(debitedAmount);
+		this.setBalance(debitedAmount);
 
-        return true;
-    }
+		return true;
+	}
 }
