@@ -7,13 +7,10 @@ public class AccountWithoutBalanceException extends RuntimeException {
 
 	private static final long serialVersionUID = -7351146825129595990L;
 
-	private String description;
+	private final String description;
 
-    public AccountWithoutBalanceException() { super(); }
-
-    public AccountWithoutBalanceException(String message, String description) {
-        super(message);
-
-        this.description = description;
-    }
+	public AccountWithoutBalanceException(String message, String description) {
+		super(message);
+		this.description = description;
+	}
 }

@@ -13,7 +13,7 @@ import java.util.Date;
 @ControllerAdvice
 public class ControllerExceptionHandler {
 
-    private final String MESSAGE_ERROR_DEFAULT = "Não foi possível processar sua requisição!";
+    private static final String MESSAGE_ERROR_DEFAULT = "Não foi possível processar sua requisição!";
 
     @ExceptionHandler(AccountNotFoundException.class)
     public ResponseEntity<ErrorMessageResponse> accountNotFoundException(AccountNotFoundException exception) {
